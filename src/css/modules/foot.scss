@@ -1,0 +1,28 @@
+#foot{
+    height: 300px;
+    width: 100%;
+    background: #eee;
+    #list_1{
+        ul{
+            display: flex;
+            justify-content: space-between;
+            $hi : 60px;
+            li{
+                height: $hi;
+                line-height: $hi;
+                a{
+                    font-size: 18px;
+                    font-weight: bold;
+                    display: inline-block;
+                    height: $hi;
+                    line-height: $hi;
+                }
+                i{
+                    float: left;
+                    font-size: 36px;
+                    color: #f60;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+#banner{
+    position: relative;
+    height: 550px;
+    $ht : 50;
+    $wl: 50;
+    .jian_l{
+        position: absolute;
+        background-image: url('../../static/img/left.jpg');
+        background-size: $ht + px ,$wl + px;
+        background-repeat: no-repeat;
+        display: block;
+        height: $ht + px;
+        width: $wl +  px;
+        left: 0;
+        top: 50%;
+        margin-top: -$ht / 2 + px;
+        z-index: 10;
+        opacity: .1;
+    }
+    .jian_r{
+        position: absolute;
+        background-image: url('../../static/img/right.jpg');
+        background-size: $ht + px ,$wl + px;
+        background-repeat: no-repeat;
+        display: block;
+        height: $ht + px;
+        width: $wl +  px;
+        right: 0;
+        top: 50%;
+        margin-top: -$ht / 2 + px;
+        z-index: 10;
+        opacity: .1;
+    }
+    ul{
+        li{
+            position: absolute;
+            left: 50%;
+            margin-left: -1920/2 + px;
+            opacity: 0;
+            &.show{opacity: 1;}
+            transition: .5s;
+            img{
+               width: 1920px;;
+            }
+        }
+    }
+    div{
+        position: absolute;
+        bottom:0;
+        margin: 0 auto;
+        $pos : 15px;
+        ol{
+            position: absolute;
+            bottom: $pos;
+            right: $pos;
+            $hw : 10px;
+            li{
+                &.active{
+                    background: #f60;
+                }
+                float: left;
+                margin-left: $pos;
+                width: $hw;
+                height: $hw;
+                background: #fff;
+                border: 1px solid #000;
+                border-radius: 50%;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+@import './modules/var.scss';
+@import './modules/head.scss';
+@import './modules/banner.scss';
+@import './modules/foot.scss';
+
+
+//属于首页自己的代码
+
+#phone{
+    margin-top: 40px;
+    p{
+        font-size: 30px;
+        font-weight: bold;
+    }    
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            margin-top: 20px;
+            $li_w : 230; 
+            $top : 15;
+            height: 290px;
+            width: $li_w + px;
+            text-align: center;
+            img{
+                $hw : 150;
+                left: 50%;
+                margin-left: ($li_w - $hw)/2 + px;
+                height: $hw + px;
+                width: $hw + px;
+            }
+            h2{
+                margin-top: $top + px;
+                text-align: center;
+            }
+            p{
+                margin-top: $top + px;
+                text-align: center;
+                font-size: $base_fontSize;
+                color: #f00;
+            }        
+        }    
+    }
+}
+
+#pad{
+    p{
+        font-size: 30px;
+        font-weight: bold;
+    }    
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            margin-top: 20px;
+            $li_w : 230; 
+            $top : 15;
+            height: 290px;
+            width: $li_w + px;
+            text-align: center;
+            img{
+                $hw : 150;
+                left: 50%;
+                margin-left: ($li_w - $hw)/2 + px;
+                height: $hw + px;
+                width: $hw + px;
+            }
+            h2{
+                margin-top: $top + px;
+                text-align: center;
+            }
+            p{
+                margin-top: $top + px;
+                text-align: center;
+                font-size: $base_fontSize;
+                color: #f00;
+            }        
+        }    
+    }
+}
+
+#book{
+    p{
+        font-size: 30px;
+        font-weight: bold;
+    }    
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li{
+            margin-top: 20px;
+            $li_w : 230; 
+            $top : 15;
+            height: 290px;
+            width: $li_w + px;
+            text-align: center;
+            img{
+                $hw : 150;
+                left: 50%;
+                margin-left: ($li_w - $hw)/2 + px;
+                height: $hw + px;
+                width: $hw + px;
+            }
+            h2{
+                margin-top: $top + px;
+                text-align: center;
+            }
+            p{
+                margin-top: $top + px;
+                text-align: center;
+                font-size: $base_fontSize;
+                color: #f00;
+            }        
+        }    
+    }
+}

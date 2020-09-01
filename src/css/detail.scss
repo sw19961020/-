@@ -1,0 +1,103 @@
+@import './modules/var.scss';
+@import './modules/head.scss';
+@import './modules/banner.scss';
+@import './modules/foot.scss';
+
+//detail页自己的代码
+
+#shop{
+    $h : 500;
+    height: $h + px;
+    .box{
+        height: $h + px;
+        width: 700px;
+        margin: 0 auto;
+        img{
+            margin-top: 90px;
+            height: 320px;
+        }
+        .d_r{
+            margin-right: 20px;
+            margin-top: 140px; 
+            h2{
+                margin-top: 20px;
+                font-size: 20px;
+                color: #aaa;
+            }
+            h3{
+                margin-top: 20px;
+                font-weight: 100;
+                span{
+                    color: #f60;
+                    font-size: 22px;
+                }
+            }
+            p{
+                font-size: 12px;
+                margin-top: 20px; 
+                i{
+                    padding-left: 10px;   
+                    font-size: 16px;
+                    font-style: normal;
+                }
+                span{
+                    margin-left: 5px;   
+                    font-size: 13px;
+                    display: inline-block;
+                    text-align: center;
+                    width: 60px;
+                    border: 1px solid #f60;
+                    cursor: pointer;
+                }
+            }
+            .bot{
+                $hi : 30; 
+                height: $hi + px;
+                line-height: $hi + px;
+                width: 300px;
+                margin-top: 20px;
+                .bot_l{
+                    $wh : 30;
+                    height: $wh + px;
+                    width: $wh * 1.5 + px;
+                    input{
+                        box-sizing: border-box;
+                        border: 1px solid #000;
+                        width: $wh + px;
+                        height: $wh + px;
+                    }
+                    #add{
+                        height: $wh/2 + px;
+                        width: $wh/2 + px;
+                    }
+                    #unadd{
+                        height: $wh/2 + px;
+                        width: $wh/2 + px;
+                    }
+                }
+                .bot_r{
+                    margin-left: 30px;
+                    #add_cart{
+                        background:#fc600c;
+                        height: $hi + px;
+                        line-height: $hi + px;        
+                        width: 100px;
+                        text-align: center;
+                        border: 0;
+                        cursor: pointer;
+                    }
+                    #buy{
+                        margin-left: 10px;
+                        height: $hi + px;
+                        line-height: $hi + px;        
+                        width: 100px;
+                        text-align: center;
+                        background: #ca151d;
+                        border: 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

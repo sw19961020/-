@@ -1,0 +1,35 @@
+#header{
+    $ih : 30px;
+    height: 110px;
+    #header_1{
+        background: $base_color;
+    }
+    #head_1{
+        $fh : 12px;
+        height: $ih;
+        line-height: $ih;
+        a{
+            display: block;
+            color: #ccc;
+            font-size: 12px;
+            height: 12px;
+        }
+        ul{
+            li{
+                margin-right: 10px;
+            }
+        }
+        ol{
+            li{
+                margin-left: 10px;
+            }
+        }
+    }
+    #head_2{
+        height: 80px;
+        img{
+            margin-top: 21px;
+            width: 200px;
+        }
+    }
+}
