@@ -195,6 +195,7 @@ define(['jquery','../api/server','modules/banner' , 'modules/cartStorage'],funct
             var $num_cart = $('#num_cart');
             var $color_span = $('#color_p').find('span').filter('.active');
             var data = {
+                goodsImg: $res.photoNormal,
                 goodsChecked : false,
                 goodsId : $res.goodsId,
                 goodsColor: $res.chooseColor[$color_span.index()],

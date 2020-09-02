@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/static/icon/iconfont.css">
+    <script src="../lib/require.js" data-main="../js/form.js"></script>
+</head>
+<body>
+    @include('head.html')
+    <div id="all_form" class="container">
+        <ul id="form_ul">
+            <!-- <li>
+                <div class="goods_div">
+                    <img src="">
+                    <article>
+                        <h2>11</h2>
+                        <p>2222</p>    
+                    </article>
+                </div>
+                <div class="title_div">
+                    <h2>单价￥</h2>
+                    <p>数量</p>
+                    <span>总价￥</span>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+    <div id="form_status" class="container">
+        <p>总计需付款:<span>￥ 0.00</span></p>
+        <aside id="buy_goods">
+            <button class="btn_remove"><a href="./cart.html">取消订单</a></button>
+            <button><a>立即付款</a></button>
+        </aside>
+    </div>
+    @include('foot.html')
+</body>
+</html>

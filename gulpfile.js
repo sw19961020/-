@@ -47,13 +47,24 @@ function webserverTask(){
             host : 'localhost',
             port : 4000,
             open : './view/index.html',
-            livereload : true 
+            livereload : true,
+            proxies:[   //配置反向代理
+                {
+                    source:'/api2',
+                    target:'http://localhost/api2'
+                }
+            ]
         }));
 }
 
 function staticTask(){
     return src('./src/static/**')
         .pipe(dest('./dist/static'));
+}
+
+function phpTask(){
+    return src('./src/php/**')
+    .pipe(dest('./dist/php'))
 }
 
 function watchTask(){
@@ -63,12 +74,13 @@ function watchTask(){
     watch('./src/js/**',jsTask);
     watch('./src/lib/**',libTask);
     watch('./src/api/**',apiTask);
+    watch('./src/php/**',phpTask)
 }
 
 
 
 
 module.exports = {
-    dev : series(cleanTask,parallel(file_includeTask,sassTask,staticTask,jsTask,libTask,apiTask),parallel(webserverTask,watchTask)) ,
+    dev : series(cleanTask,parallel(file_includeTask,sassTask,staticTask,jsTask,libTask,apiTask,phpTask),parallel(webserverTask,watchTask)) ,
     build: series(cleanTask)
 }
