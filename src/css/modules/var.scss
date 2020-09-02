@@ -1,6 +1,20 @@
 $base_color : #3a3a3a ; 
 $base_container : 1200px;
 $base_fontSize : 16px;
+$defaultColor : #848484;
+$defaultFontSize : 16px;
+$defaultContainer : 1200px;
+
+@mixin posLT {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+@mixin wh100 {
+    width : 100%;
+    height : 100%;
+    display: block;
+}
 
 *{padding: 0;margin: 0;}
 body,html{height: 100%;width: 100%;}
@@ -8,8 +22,8 @@ body{overflow-x: hidden;}
 h1,h2,h3,h4,h5,h6{font-size: $base_fontSize;}
 .l{float: left;}
 .r{float: right;}
-.container{width: $base_container;margin:0 auto;}
-.container_f{width: 100%;}
+.container{width: $base_container;margin:0 auto;position: relative;}
+.container_f{width: 100%;position: relative;}
 ul,ol{list-style: none;}
 .clean::after{content: '';clear: both;display: block;}
 img{display: block;}

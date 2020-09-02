@@ -5,16 +5,53 @@
 
 //detail页自己的代码
 
-#shop{
+#shop{    //详情页渲染
     $h : 500;
     height: $h + px;
     .box{
         height: $h + px;
         width: 700px;
         margin: 0 auto;
-        img{
+        #d_img{
+            float: left;
             margin-top: 90px;
-            height: 320px;
+            position: relative;
+            height: 300px;
+            width: 300px;
+            // border: 1px solid #f60;
+            img{
+                width: 300px;
+                height: 300px;
+            }
+            span{   //遮罩层
+                $wh : 100;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: $wh + px;
+                height: $wh + px;
+                background: #999;
+                opacity: .5;
+            }    
+        }
+        article{    //大图
+            $wwh : 200;
+            z-index: 20;
+            position: absolute;
+            // background: yellow;
+            width: $wwh + px;
+            height: $wwh + px;
+            left: 550px;
+            top: 0px;
+            overflow: hidden;
+            img{
+                z-index: 20;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 600px;
+                height: 600px;
+            }
         }
         .d_r{
             margin-right: 20px;
@@ -41,12 +78,16 @@
                     font-style: normal;
                 }
                 span{
+                    &.active{
+                        border-color: #f00;
+                        color : #f00;
+                    }
                     margin-left: 5px;   
                     font-size: 13px;
                     display: inline-block;
                     text-align: center;
                     width: 60px;
-                    border: 1px solid #f60;
+                    border: 1px solid #060;
                     cursor: pointer;
                 }
             }
@@ -74,6 +115,9 @@
                         height: $wh/2 + px;
                         width: $wh/2 + px;
                     }
+                    #num_cart{
+                        text-align: center;
+                    }
                 }
                 .bot_r{
                     margin-left: 30px;
@@ -95,9 +139,31 @@
                         background: #ca151d;
                         border: 0;
                         cursor: pointer;
+                        a{
+                            display: block;
+                            
+                        }
                     }
                 }
             }
         }
     }
 }
+#detailGoods{      //商品介绍
+    margin-top: 60px;
+    border-top: 1px dashed #ccc;
+    h3{
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 30px;
+        font : {
+            size:40px;
+            weight:bold;
+        }
+    }
+    img{ 
+        margin:0 auto;
+        width: 100%;
+    }
+}        
+

@@ -3,35 +3,99 @@
     height: 550px;
     $ht : 50;
     $wl: 50;
-    .jian_l{
+    #change_list{   
+        background: white;
+        position: absolute;
+        z-index: 11;
+        width: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        div{
+            margin-top: 10px;
+            $li_w : 230 / 2; 
+            $top : 10;
+            height: 140px;
+            width: $li_w + px;
+            text-align: center;
+            img{
+                $hw : 150 / 2;
+                left: 50%;
+                margin-left: ($li_w - $hw)/2 + px;
+                height: $hw + px;
+                width: $hw + px;
+            }
+            h2{
+                margin-top: $top + px;
+                text-align: center;
+            }
+            p{
+                margin-top: $top + px;
+                text-align: center;
+                font-size: $base_fontSize;
+                color: #f00;
+            }        
+        }    
+    }    
+    article{        //扩展列表一级
+        position: absolute;
+        left: 10%;
+        top: 35%;
+        z-index: 10;
+        border-radius: 10px;
+        background: #fff;
+        p{
+            height: $ht + px;
+            line-height: $ht + px;
+            width: $ht * 2 + px;
+            text-align: center;
+            span{
+                float: right;
+                margin-right: 5px;
+            }
+            &:hover{
+                cursor: pointer;
+                background: #f60;
+                border-radius: 10px;
+            }
+        }
+    }
+    .jian_l{        //向左切换图片
         position: absolute;
         background-image: url('../../static/img/left.jpg');
-        background-size: $ht + px ,$wl + px;
+        background-size: $ht + px ,$wl / 1.5 + px;
         background-repeat: no-repeat;
         display: block;
         height: $ht + px;
-        width: $wl +  px;
-        left: 0;
+        width: $wl / 1.5 +  px;
+        left: 25%;
         top: 50%;
         margin-top: -$ht / 2 + px;
         z-index: 10;
-        opacity: .1;
+        opacity: .2;
+        &:hover{
+            opacity: .6;
+        }
     }
-    .jian_r{
+    .jian_r{      //向右切换箭头
         position: absolute;
         background-image: url('../../static/img/right.jpg');
-        background-size: $ht + px ,$wl + px;
+        background-size: $ht + px ,$wl / 1.5 + px;
+        background-position-x: right;
         background-repeat: no-repeat;
         display: block;
-        height: $ht + px;
-        width: $wl +  px;
-        right: 0;
+        height: $ht  + px;
+        width: $wl / 1.5 +  px;
+        right: 25%;
         top: 50%;
         margin-top: -$ht / 2 + px;
         z-index: 10;
-        opacity: .1;
+        opacity: .2;
+        &:hover{
+            opacity: .6;
+        }
     }
-    ul{
+    ul{         //图片结构样式
         li{
             position: absolute;
             left: 50%;
@@ -44,12 +108,13 @@
             }
         }
     }
-    div{
+    .olList{    //点击切换图样式
         position: absolute;
         bottom:0;
         margin: 0 auto;
         $pos : 15px;
         ol{
+            z-index: 10;
             position: absolute;
             bottom: $pos;
             right: $pos;
@@ -70,5 +135,49 @@
                 }
             }
         }
+    }
+    #change_list{  //扩展列表展开样式
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        position: absolute;
+        z-index: 100;
+        background: rgba(255,255,255,1);
+        border-radius: 20px;
+            .list_own{
+                background: #eee;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                $li_w : 210; 
+                $top : 10;
+                height: 200px;
+                width: $li_w + px;
+                text-align: center;
+                opacity: .8;
+                border-radius: 10px;
+                img{
+                    margin-top:20px ;
+                    $hw : 100;
+                    left: 50%;
+                    margin-left: ($li_w - $hw)/2 + px;
+                    height: $hw + px;
+                    width: $hw + px;
+                }
+                h2{
+                    margin-top: $top + px;
+                    text-align: center;
+                }
+                p{
+                    margin-top: $top + px;
+                    text-align: center;
+                    font-size: $base_fontSize;
+                    color: #f00;
+                }
+                &:hover{
+                    box-shadow: 5px 5px 5px;
+                    opacity: 1;
+                }        
+            }        
     }
 }

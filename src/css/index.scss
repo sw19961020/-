@@ -17,13 +17,17 @@
         flex-wrap: wrap;
         justify-content: space-between;
         li{
+            background: #eee;
             margin-top: 20px;
             $li_w : 230; 
             $top : 15;
             height: 290px;
             width: $li_w + px;
             text-align: center;
+            opacity: .8;
+            border-radius: 10px;
             img{
+                margin-top:20px ;
                 $hw : 150;
                 left: 50%;
                 margin-left: ($li_w - $hw)/2 + px;
@@ -39,6 +43,10 @@
                 text-align: center;
                 font-size: $base_fontSize;
                 color: #f00;
+            }
+            &:hover{
+                box-shadow: 5px 5px 5px;
+                opacity: 1;
             }        
         }    
     }
@@ -54,13 +62,17 @@
         flex-wrap: wrap;
         justify-content: space-between;
         li{
+            background: #eee;
             margin-top: 20px;
             $li_w : 230; 
             $top : 15;
             height: 290px;
             width: $li_w + px;
             text-align: center;
+            opacity: .8;
+            border-radius: 10px;
             img{
+                margin-top:20px ;
                 $hw : 150;
                 left: 50%;
                 margin-left: ($li_w - $hw)/2 + px;
@@ -76,7 +88,11 @@
                 text-align: center;
                 font-size: $base_fontSize;
                 color: #f00;
-            }        
+            } 
+            &:hover{
+                box-shadow: 5px 5px 5px;
+                opacity: 1;
+            }               
         }    
     }
 }
@@ -91,13 +107,17 @@
         flex-wrap: wrap;
         justify-content: space-between;
         li{
+            background: #eee;
             margin-top: 20px;
             $li_w : 230; 
             $top : 15;
             height: 290px;
             width: $li_w + px;
             text-align: center;
+            opacity: .8;
+            border-radius: 10px;
             img{
+                margin-top:20px ;
                 $hw : 150;
                 left: 50%;
                 margin-left: ($li_w - $hw)/2 + px;
@@ -113,7 +133,12 @@
                 text-align: center;
                 font-size: $base_fontSize;
                 color: #f00;
-            }        
+            } 
+            &:hover{
+                box-shadow: 5px 5px 5px;
+                opacity: 1;
+            }               
         }    
     }
+    margin-bottom: 50px;
 }

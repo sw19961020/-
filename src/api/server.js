@@ -1,6 +1,6 @@
 define(['jquery'],function($){
     function getBannerData(){
-        return $.ajax('../api/mock/banner.json');
+        return $.ajax('../api/mock/banner.json'); //返回值为一个promise对象  底层为resolve(数据)  所以.then((res)=>{能拿到res数据})
     }
 
     function getBannerData_detail(){
