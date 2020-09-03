@@ -1,13 +1,12 @@
 define(['jquery'] ,function($){
-    function res(options){
+    function response_res(options){
         var $options = Object.assign({
             username : '',
             password : ''
         },options);
 
-        console.log($options);
         $.ajax({
-            url : '../../php/login.php',
+            url : '/api2/login.php',        //-->http://localhost/api2/login.php
             data : {'username' : $options.username , 'password' : $options.password } ,
             // data : $options ,
             dataType: "json",
@@ -16,7 +15,7 @@ define(['jquery'] ,function($){
                 if(obj.code){
                     alert(obj.message);
                     console.log(res);
-                    window.location.href = '../../view/index.html';
+                    window.location.href = '/view/index.html';
                 }
                 else{
                     console.log(res);
@@ -25,5 +24,5 @@ define(['jquery'] ,function($){
             }
         });
     }
-    return res;
+    return response_res;
 })

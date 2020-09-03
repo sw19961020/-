@@ -4,7 +4,7 @@ requirejs.config({
     }     
 });
 
-define(['jquery', '/js/modules/login_in.js'],function($,res){
+define(['jquery', './modules/login_in'],function($,res){
 
     $('body').attr('class','text-center');
     $('#all').css('display','block');

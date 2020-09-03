@@ -3,6 +3,10 @@ var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var file_include = require('gulp-file-include');
 var webserver = require('gulp-webserver');
+var cssmin = require('gulp-cssmin');
+var babel = require('gulp-babel');
+var uglify = require('gulp-uglify');
+var requireJsOptimize = require('gulp-requirejs-optimize');
 
 function cleanTask(){
     return src('./dist',{allowEmpty : true})
@@ -41,6 +45,7 @@ function apiTask(){
 
 }
 
+
 function webserverTask(){
     return src('./dist')
         .pipe(webserver({
@@ -62,10 +67,6 @@ function staticTask(){
         .pipe(dest('./dist/static'));
 }
 
-function phpTask(){
-    return src('./src/php/**')
-    .pipe(dest('./dist/php'))
-}
 
 function watchTask(){
     watch('./src/view/**',file_includeTask);
@@ -74,13 +75,31 @@ function watchTask(){
     watch('./src/js/**',jsTask);
     watch('./src/lib/**',libTask);
     watch('./src/api/**',apiTask);
-    watch('./src/php/**',phpTask)
+}
+
+function buildCssTask(){
+    return src('./src/css/*.scss')
+        .pipe(sass())
+        .pipe(cssmin())
+        .pipe(dest('./dist/css'));
+}
+
+function buildJsTask(){
+    return src('./src/js/*.js')
+        .pipe(requireJsOptimize({
+            optimize : "none" ,
+            paths : {
+                "jquery" : "empty:"
+            }
+        }))
+        .pipe(babel({presets : ['es2015']}))
+        .pipe(uglify())
+        .pipe(dest('./dist/js'));
 }
 
 
 
-
 module.exports = {
-    dev : series(cleanTask,parallel(file_includeTask,sassTask,staticTask,jsTask,libTask,apiTask,phpTask),parallel(webserverTask,watchTask)) ,
-    build: series(cleanTask)
+    dev : series(cleanTask,parallel(file_includeTask,sassTask,staticTask,jsTask,libTask,apiTask),parallel(webserverTask,watchTask)) ,
+    build: series(cleanTask,parallel(file_includeTask,staticTask,libTask,apiTask,buildCssTask,buildJsTask))
 }
